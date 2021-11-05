@@ -145,7 +145,13 @@ const Index = ({
           </div>
         </div>
         <div className="text-green container text-center mt-5 pb-4 text-3xl">
-          {"smart contract address < >"}
+          <a
+            href="https://etherscan.io/address/0x084493dedf7aebbb230c11e731c51036be966410#code"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {"smart contract address < >"}
+          </a>
         </div>
       </div>
       <div className="bg-primary">
