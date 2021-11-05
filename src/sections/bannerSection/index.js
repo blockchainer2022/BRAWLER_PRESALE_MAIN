@@ -48,8 +48,11 @@ const Index = ({
           <div className="flex justify-items-end md:justify-center py-4 ">
             <ul className=" justify-center hidden md:flex">
               <ListItem />
-              <ListItem text="RoadMap" link="#roadmap" />
-              <ListItem text="Faq" link="#faq" />
+              <ListItem
+                text="RoadMap"
+                link="https://thimblegang.com/#roadmap"
+              />
+              <ListItem text="Faq" link="https://thimblegang.com/#faq" />
               <ListItem text="Connect" link="#connect" />
             </ul>
             <div
@@ -71,12 +74,24 @@ const Index = ({
                 </a>
               </li>
               <li className="p-2 text-lg uppercase">
-                <a className="block" href="#roadmap" onClick={openHandler}>
+                <a
+                  className="block"
+                  href="https://thimblegang.com/#roadmap"
+                  onClick={openHandler}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   RoadMap
                 </a>
               </li>
               <li className="p-2 text-lg uppercase">
-                <a className="block" href="#faq" onClick={openHandler}>
+                <a
+                  className="block"
+                  href="https://thimblegang.com/#faq"
+                  onClick={openHandler}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Faq
                 </a>
               </li>
@@ -112,18 +127,26 @@ const Index = ({
                 Trust wallet <span className="text-green">browser</span>
               </p>
               <div className="my-4">
-                <Slider min={0} max={20} defaultValue={1} handle={handle} />
+                <Slider min={0} max={100} defaultValue={1} handle={handle} />
               </div>
 
               <p className="text-2xl md:text-4xl md:px-10 ">
-                Mint <span className="text-green"> 01 </span> TG Brawlers for{" "}
-                <span className="text-green"> 0.00 </span> ETH <br />
+                Mint <span className="text-green">{value} </span> TG Brawlers
+                for{" "}
+                <span className="text-green">
+                  {(value * displayPrice).toFixed(4)}{" "}
+                </span>{" "}
+                ETH <br />
                 <span className="text-green">
                   (A limit of 100 units per transaction is set)
                 </span>
               </p>
               <button
-                className="bg-yellow rounded  p-2 text-3xl md:text-5xl mt-10 block w-full text-black "
+                className={`${
+                  totalSupply === 1168
+                    ? "bg-gray-500 pointer-events-none select-none"
+                    : "bg-yellow"
+                } rounded  p-2 text-3xl md:text-5xl mt-10 block w-full text-black  `}
                 onClick={() => mint(value)}
               >
                 {"< MINT >"}
@@ -138,7 +161,7 @@ const Index = ({
                   Brawlers minted
                 </p>
                 <p className="text-4xl  md:text-5xl lg:text-7xl text-green">
-                  {totalSupply}/{maxSupply}
+                  {totalSupply}/{1168}
                 </p>
               </div>
             </div>
@@ -173,7 +196,12 @@ const Index = ({
 export default Index;
 const ListItem = ({ text = "Mint", link = "#" }) => (
   <li className="ml-8">
-    <a href={link} className="uppercase text-5xl ">
+    <a
+      href={link}
+      className="uppercase text-5xl "
+      target="_blank"
+      rel="noreferrer"
+    >
       {text}
     </a>
   </li>
