@@ -137,9 +137,6 @@ const Index = ({
                   {(value * displayPrice).toFixed(4)}{" "}
                 </span>{" "}
                 ETH <br />
-                <span className="text-green">
-                  (A limit of 100 units per transaction is set)
-                </span>
               </p>
               <button
                 className={`${
