@@ -53,7 +53,7 @@ const Index = ({
                 link="https://thimblegang.com/#roadmap"
               />
               <ListItem text="Faq" link="https://thimblegang.com/#faq" />
-              <ListItem text="Connect" link="#connect" />
+              {/* <ListItem text="Connect" link="#connect" /> */}
             </ul>
             <div
               className="md:hidden text-2xl sm:text-3xl cursor-pointer ml-auto"
@@ -95,11 +95,11 @@ const Index = ({
                   Faq
                 </a>
               </li>
-              <li className="p-2 text-lg uppercase">
+              {/* <li className="p-2 text-lg uppercase">
                 <a className="block" href="#connect" onClick={openHandler}>
                   Connect
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
           {/* Mobile Menu */}
